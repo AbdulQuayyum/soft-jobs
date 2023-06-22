@@ -5,7 +5,7 @@ import { useRouter } from "expo-router";
 import styles from "../Styles/Welcome"
 import { Icons, SIZES } from "../Constants/Index"
 
-const JobTypes = ["Full-time", "Part-time", "Contracts", "Internship"];
+const JobTypes = ["Full-time", "Part-time", "Contracts", "Internship", "Freelance", "Volunteer"];
 
 const Welcome = ({ searchTerm, setSearchTerm, HandleClick }) => {
     const router = useRouter();
