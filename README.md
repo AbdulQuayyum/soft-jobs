@@ -1,14 +1,9 @@
-# Expo Router Example
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+# Soft-Jobs
 
-## 🚀 How to use
+A Cross Application for Job Finders built with React-Native Technology and using JSearch API Service
 
-```sh
-npx create-expo-app -e with-router
-```
 
-## 📝 Notes
+## Author
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
+- [@AbdulQuayyum](https://www.github.com/AbdulQuayyum)
