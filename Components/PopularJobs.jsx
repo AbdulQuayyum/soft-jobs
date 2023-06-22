@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useRouter } from "expo-router";
+import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from "react-native";
 
 const PopularJobs = () => {
     return (
-        <div>PopularJobs</div>
+        <View>
+            <Text> PopularJobs </Text>
+        </View>
     )
 }
 

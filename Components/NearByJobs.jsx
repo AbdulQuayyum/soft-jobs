@@ -1,8 +1,12 @@
-import React from 'react'
+import React from "react";
+import { useRouter } from "expo-router";
+import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
 
 const NearByJobs = () => {
     return (
-        <div>NearByJobs</div>
+        <View>
+            <Text> NearByJobs </Text>
+        </View>
     )
 }
 

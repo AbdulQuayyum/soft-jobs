@@ -11,3 +11,5 @@ import Specifics from "./JobDetails/Specifics";
 import { default as JobAbout } from "./JobDetails/About"
 import { default as JobFooter } from "./JobDetails/Footer"
 import { default as JobTabs } from "./JobDetails/Tabs"
+
+export { ScreenHeaderBtn, NearByJobs, PopularJobs, Welcome, NearByJobCard, PopularJobCard, Company, Specifics, JobAbout, JobFooter, JobTabs }

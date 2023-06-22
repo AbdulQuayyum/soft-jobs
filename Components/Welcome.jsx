@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { View, Text, TextInput, TouchableOpacity, Image, FlatList } from "react-native";
+import { useRouter } from "expo-router";
 
 const Welcome = () => {
     return (
-        <div>Welcome</div>
+        <View>
+            <Text>Welcome </Text>
+        </View>
     )
 }
 
