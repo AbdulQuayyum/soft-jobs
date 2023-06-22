@@ -1,8 +1,11 @@
 import React from 'react'
+import { View, Text, TouchableOpacity, Image } from "react-native";
 
-const PopularJobCard = () => {
+import styles from "../../Styles/PopularJobCard"
+
+const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
     return (
-        <div>PopularJobCard</div>
+        <View>PopularJobCard</View>
     )
 }
 
