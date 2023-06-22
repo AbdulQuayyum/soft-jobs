@@ -32,13 +32,13 @@ const Home = () => {
                     }}
                 >
                     <Welcome
-                        // searchTerm={searchTerm}
-                        // setSearchTerm={setSearchTerm}
-                        // handleClick={() => {
-                        //     if (searchTerm) {
-                        //         router.push(`/Search/${searchTerm}`)
-                        //     }
-                        // }}
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        handleClick={() => {
+                            if (searchTerm) {
+                                router.push(`/Search/${searchTerm}`)
+                            }
+                        }}
                     />
 
                     <PopularJobs />
