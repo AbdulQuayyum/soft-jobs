@@ -31,7 +31,11 @@ const FetchDummy = () => {
         FetchData();
     };
 
-    return { data, isLoading, error, ReFetch };
+    const GetDataByJobId = (jobId) => {
+        return data.find((item) => item.job_id === jobId);
+    };
+
+    return { data, isLoading, error, ReFetch, GetDataByJobId };
 };
 
 export default FetchDummy;
