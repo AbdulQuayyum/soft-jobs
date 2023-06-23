@@ -13,43 +13,20 @@ import { COLORS, Icons, SIZES } from "../../Constants/Index"
 import { ScreenHeaderBtn } from "../../Components/Index"
 import NearByJobCard from '../../Components/Cards/NearByJobCard'
 import styles from "../../Styles/Search"
+import FetchDummy from '../../Utilities/FetchDummy'
 
 const Search = () => {
     const params = useSearchParams();
     const router = useRouter()
 
-    const [searchResult, setSearchResult] = useState([]);
+    // const [searchResult, setSearchResult] = useState([]);
     const [searchLoader, setSearchLoader] = useState(false);
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
+    const { SearchByValue } = FetchDummy();
 
-    const HandleSearch = async () => {
-        setSearchLoader(true);
-        setSearchResult([])
-
-        try {
-            const options = {
-                method: "GET",
-                url: `${ApiUrl}/search`,
-                headers: {
-                    "X-RapidAPI-Key": ApiKey,
-                    "X-RapidAPI-Host": ApiHost,
-                },
-                params: {
-                    query: params.id,
-                    page: page.toString(),
-                },
-            };
-
-            const response = await axios.request(options);
-            setSearchResult(response.data.data);
-        } catch (error) {
-            setSearchError(error);
-            console.log(error);
-        } finally {
-            setSearchLoader(false);
-        }
-    };
+    const response = SearchByValue(params.id)
+    const searchResult = response
 
     const HandlePagination = (direction) => {
         if (direction === 'left' && page > 1) {
@@ -62,8 +39,12 @@ const Search = () => {
     }
 
     useEffect(() => {
-        HandleSearch()
-    }, [])
+        if (!searchResult) {
+            setSearchLoader(true);
+        } else {
+            setSearchLoader(false);
+        }
+    }, [searchResult])
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
             <Stack.Screen

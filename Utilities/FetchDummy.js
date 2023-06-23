@@ -35,7 +35,18 @@ const FetchDummy = () => {
         return data.find((item) => item.job_id === jobId);
     };
 
-    return { data, isLoading, error, ReFetch, GetDataByJobId };
+    const SearchByValue = (value) => {
+        const filteredData = data.filter((item) => {
+            // Convert object values to string and perform case-insensitive search
+            const itemValues = Object.values(item).map((val) =>
+                val ? val.toString().toLowerCase() : ""
+            );
+            return itemValues.some((itemValue) => itemValue.includes(value.toLowerCase()));
+        });
+        return filteredData;
+    };
+
+    return { data, isLoading, error, ReFetch, GetDataByJobId, SearchByValue };
 };
 
 export default FetchDummy;
