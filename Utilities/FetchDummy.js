@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 import DataUrl from "../Data/Dummy.json"
+import MainData from "../Data/Data.json"
 
 const FetchDummy = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
+
+    const NewMainData = MainData.data
 
     const FetchData = async () => {
         setIsLoading(true);
@@ -32,16 +35,20 @@ const FetchDummy = () => {
     };
 
     const GetDataByJobId = (jobId) => {
-        return data.find((item) => item.job_id === jobId);
+        return NewMainData.find((item) => item.job_id === jobId);
     };
 
-    const SearchByValue = (value) => {
-        const filteredData = data.filter((item) => {
-            // Convert object values to string and perform case-insensitive search
+    const SearchByValue = (value, NewMainData) => {
+        const filteredData = NewMainData.filter((item) => {
             const itemValues = Object.values(item).map((val) =>
-                val ? val.toString().toLowerCase() : ""
+                val ? val.toString() : ''
             );
-            return itemValues.some((itemValue) => itemValue.includes(value.toLowerCase()));
+            return itemValues.some((itemValue) => {
+                if (typeof itemValue === 'string') {
+                    return itemValue.includes(value);
+                }
+                return false;
+            });
         });
         return filteredData;
     };

@@ -2,20 +2,16 @@ import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native'
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
-import axios from 'axios'
-import { API_KEY, API_HOST, API_BASE_URL } from "@env"
-
-const ApiKey = API_KEY
-const ApiHost = API_HOST
-const ApiUrl = API_BASE_URL
 
 import { COLORS, Icons, SIZES } from "../../Constants/Index"
 import { ScreenHeaderBtn } from "../../Components/Index"
 import NearByJobCard from '../../Components/Cards/NearByJobCard'
 import styles from "../../Styles/Search"
 import FetchDummy from '../../Utilities/FetchDummy'
+import MainData from "../../Data/Data.json"
 
 const Search = () => {
+    const NewMainData = MainData.data
     const params = useSearchParams();
     const router = useRouter()
 
@@ -25,7 +21,7 @@ const Search = () => {
     const [page, setPage] = useState(1);
     const { SearchByValue } = FetchDummy();
 
-    const response = SearchByValue(params.id)
+    const response = SearchByValue(params.id, NewMainData)
     const searchResult = response
 
     const HandlePagination = (direction) => {
