@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from "react-native";
+import { shuffle } from "lodash"
 
 import { COLORS, SIZES } from '../Constants/Theme';
 import styles from "../Styles/PopularJobs"
@@ -11,6 +12,7 @@ import FetchDummy from '../Utilities/FetchDummy';
 const PopularJobs = () => {
     const router = useRouter();
     const { data, isLoading, error } = FetchDummy()
+    const newData = shuffle(data)
     // const { data, isLoading, error } = UseFetch("search", {
     //     query: "React developer",
     //     num_pages: "1",
@@ -38,7 +40,7 @@ const PopularJobs = () => {
                     <Text>Something went wrong</Text>
                 ) : (
                     <FlatList
-                        data={data}
+                        data={newData}
                         renderItem={({ item }) => (
                             <PopularJobCard
                                 item={item}

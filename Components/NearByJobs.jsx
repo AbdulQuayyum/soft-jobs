@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity, ActivityIndicator } from "react-native";
+import { shuffle } from "lodash"
 
 import { COLORS } from "../Constants/Index"
 import styles from "../Styles/NearByJobs"
@@ -15,6 +16,7 @@ const NearByJobs = () => {
     //     num_pages: "1",
     // });
     const { data, isLoading, error } = FetchDummy();
+    const newData = shuffle(data)
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -30,7 +32,7 @@ const NearByJobs = () => {
                 ) : error ? (
                     <Text>Something went wrong</Text>
                 ) : (
-                    data?.map((job) => (
+                    newData?.map((job) => (
                         <NearByJobCard
                             job={job}
                             key={`nearby-job-${job.job_id}`}
