@@ -3,7 +3,7 @@ import { Stack, useRouter, useSearchParams } from "expo-router";
 import { View, Text, SafeAreaView, ScrollView, ActivityIndicator, RefreshControl } from "react-native";
 
 import { Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from "../../Components/Index"
-import { COLORS, Icons, SIZES } from "../../Constants/Index"
+import { COLORS, Icons, Images, SIZES } from "../../Constants/Index"
 import FetchDummy from '../../Utilities/FetchDummy';
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
@@ -71,7 +71,7 @@ const JobDetail = () => {
                         />
                     ),
                     headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={Icons.Share} dimension='60%' />
+                        <ScreenHeaderBtn iconUrl={Images.Profile} dimension='100%' />
                     ),
                     headerTitle: "",
                 }}
