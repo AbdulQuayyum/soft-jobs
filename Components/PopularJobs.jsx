@@ -5,14 +5,16 @@ import { View, Text, TouchableOpacity, FlatList, ActivityIndicator } from "react
 import { COLORS, SIZES } from '../Constants/Theme';
 import styles from "../Styles/PopularJobs"
 import PopularJobCard from "../Components/Cards/PopularJobCard"
-import UseFetch from "../Utilities/UseFetch"
+// import UseFetch from "../Utilities/UseFetch"
+import FetchDummy from '../Utilities/FetchDummy';
 
 const PopularJobs = () => {
     const router = useRouter();
-    const { data, isLoading, error } = UseFetch("search", {
-        query: "React developer",
-        num_pages: "1",
-    });
+    const { data, isLoading, error } = FetchDummy()
+    // const { data, isLoading, error } = UseFetch("search", {
+    //     query: "React developer",
+    //     num_pages: "1",
+    // });
 
     const [selectedJob, setSelectedJob] = useState();
 
