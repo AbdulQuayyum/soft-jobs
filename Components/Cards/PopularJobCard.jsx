@@ -15,7 +15,7 @@ const PopularJobCard = ({ item, selectedJob, HandleCardPress }) => {
                     source={{
                         uri: CheckImageUrl(item?.employer_logo)
                             ? item.employer_logo
-                            : "https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NN1CW7diNmGXJfMicpY9eXHKV4sqzO5H.jpg",
+                            : "https://cdn1.sportngin.com/attachments/photo/7726/1001/No_Logo_Available.png",
                     }}
                     resizeMode='contain'
                     style={styles.logoImage}
