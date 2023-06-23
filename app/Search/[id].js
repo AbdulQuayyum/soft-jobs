@@ -3,7 +3,7 @@ import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'reac
 import { Stack, useRouter, useSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
 
-import { COLORS, Icons, SIZES } from "../../Constants/Index"
+import { COLORS, Icons, SIZES, Images } from "../../Constants/Index"
 import { ScreenHeaderBtn } from "../../Components/Index"
 import NearByJobCard from '../../Components/Cards/NearByJobCard'
 import styles from "../../Styles/Search"
@@ -53,6 +53,9 @@ const Search = () => {
                             dimension='60%'
                             handlePress={() => router.back()}
                         />
+                    ),
+                    headerRight: () => (
+                        <ScreenHeaderBtn iconUrl={Images.Profile} dimension='100%' />
                     ),
                     headerTitle: "",
                 }}
