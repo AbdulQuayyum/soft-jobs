@@ -1,9 +1,18 @@
 import React from 'react'
+import { View, Text } from "react-native";
 
-const About = () => {
+import styles from "../../Styles/About";
+
+const About = ({ info }) => {
     return (
-        <div>About</div>
-    )
-}
+        <View style={styles.container}>
+            <Text style={styles.headText}>About the job:</Text>
 
-export default About
+            <View style={styles.contentBox}>
+                <Text style={styles.contextText}>{info}</Text>
+            </View>
+        </View>
+    );
+};
+
+export default About;
