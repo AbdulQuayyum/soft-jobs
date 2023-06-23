@@ -4,9 +4,9 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "../../Styles/NearByJobCard"
 import { CheckImageUrl } from '../../Utilities/Index';
 
-const NearByJobCard = ({ job, handleNavigate }) => {
+const NearByJobCard = ({ job, HandleNavigate }) => {
     return (
-        <TouchableOpacity style={styles.container} onPress={handleNavigate}>
+        <TouchableOpacity style={styles.container} onPress={HandleNavigate}>
             <TouchableOpacity style={styles.logoContainer}>
                 <Image
                     source={{
